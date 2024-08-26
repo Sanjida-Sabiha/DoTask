@@ -1,0 +1,118 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./*.{html,js}"],
+  theme: {
+    container: {
+      center: true,
+      padding:'18px',
+      screens: {
+        sm: "100%",
+        md: "100%",
+        lg: "1024px",
+        xl: "1440px",
+      },
+    },
+    extend: {
+      fontFamily: {
+        'Sora': ['Sora', 'sans-serif'],
+        'Urbanist': ['Urbanist', 'sans-serif'],
+      },
+      fontSize: {
+        '2.5xl':'22px',
+        '3xl': '24px',
+        '3.5xl': '26px',
+        '28xl':'28px',
+        '4xl': '32px',
+        '4.5xl':'34px',
+        '36xl':'36px',
+        '38xl':'38px',
+        '5xl':'40px',
+        '5.5xl':'44px',
+        '6xl':'50px',
+        '54xl':'54px',
+        '6.5xl':'56px',
+        '7xl': '60px',
+        '7.5xl':'64px',
+        '8xl':'68px',
+        '80xl':'80px',
+        '9xl': '96px',
+        '10xl':'220px'
+      },
+      lineHeight: {
+        '28':'28px',
+        '30':'30px',
+        '32':'32px',
+        '34':'34px',
+        '38':'38px',
+        '140':'40px',
+        '44':'44px',
+        '48':'48px',
+        '50':'50px',
+        '60':'60px',
+        '68':'68px',
+        '76':'76px',
+        '96':'96px',
+        '115':'115px',
+        '220':'220px'
+      },
+      spacing:{
+        '200':'200px',
+        '250':'250px',
+        '375':'375px',
+        '410':'410px',
+        '417':'417px',
+        '440':'440px',
+        '480':'480px',
+        '495':'495px',
+        '674':'674px',
+        '650': '650px',
+        '730':'730px',
+        '740':'740px',
+        '764':'764px',
+        '815':'815px',
+        '863':'863px',
+        '932':'932px',
+        '1000':'1000px',
+        '1295':'1295px'
+      },
+      colors:{
+        'primaryColor':'#333333',
+        'SecondaryColor':'#4F4F4F',
+        'btnBg':'#FC7557',
+        'btnBg2':'#31C5B7',
+        'btnBg3':'#7F9DFF',
+        'lightYellow':'#FFC73A',
+        'lightGray':'#E5E7E9',
+      },
+      borderRadius: {
+        '80': '80px',
+        '40':'40px',
+        '48':'48px',
+        '64':'64px',
+        '20':'20px',
+        '24':'24px'
+      },
+      backgroundImage:{
+        'bgBanner': "url('/assets/img/homePage/planning-bg.png')",
+        'careerBg': "url('/assets/img/career/career-promo.svg')",
+        'footerBg': "url('/assets/img/footer-bg.png')",
+        'footerBg1': "url('/assets/img/homePage/footer_sm-bg.png')",
+      },
+      animation: {
+        "loop-scroll": "loop-scroll 20s linear infinite",
+        "loop-scroll2": "loop-scroll2 20s linear infinite",
+      },
+      keyframes: {
+        "loop-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
+        "loop-scroll2": {
+          from: { transform: "translateX(-100%)" },
+          to: { transform: "translateX(0)" },
+        },
+      },
+    },
+  },
+  plugins: [],
+}

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="assets/img/fav-icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Main Title -->
+    <title>DoTask || Blog Details Page</title>
+    <!-- AOS Animation CSS -->
+     <link rel="stylesheet" href="assets/css/aos.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Header Area Start Here -->
+    <header class="">
+        <div class="container">
+            <nav x-data="{ open: false }" class="">
+                <div class="flex justify-between py-7 items-center">
+                    <div class="">
+                        <a class="" href="index.html">
+                            <img class="" src="assets/img/logo.svg" alt="logo">
+                        </a>
+                    </div>
+                    <!-- Menu button for mobile -->
+                    <div class="-mr-2 flex items-center xl:hidden">
+                        <button @click="open = !open" class="bg-btnBg rounded-full w-10 h-10 px-2">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="black">
+                            <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                            <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" fill="black"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Desktop menu -->
+                    <div class="hidden xl:block" x-data="{ open: false }">
+                        <ul class="flex list-none">
+                            <li class="group flex items-center relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                                <a href="#" class="inline-flex items-center no-underline text-lg font-Urbanist font-medium text-primaryColor hover:text-btnBg transition ease-in-out duration-500 "
+                                    @click.prevent="open = !open" :class="{ 'text-LavenderIndigo': open }">
+                                    Features
+                                    <svg :class="{ 'rotate-180': open }" class="ml-2 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" width="11" height="6" fill="none" viewBox="0 0 11 6">
+                                        <path d="M1.5 1L5.5 5L9.5 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+
+                                <!-- Dropdown content  -->
+                                <ul id="dropdown" class="absolute left-1 top-6 w-52 py-2 list-none bg-white rounded-md hidden shadow-2xl z-10 group-hover:block" :class="{ 'block': open, 'hidden': !open }">
+                                    <!-- Dropdown items -->
+                                    <li>
+                                        <a href="blog.html" class="text-lg font-medium font-Urbanist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Blog Page</a>
+                                    </li>
+                                    <li>
+                                        <a href="blog-details.html" class="text-lg font-medium font-Urbanist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Blog Post Page</a>
+                                    </li>
+                                    <li>
+                                        <a href="faq.html" class="text-lg font-medium font-Urbanist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">FAQ</a>
+                                    </li>
+                                    <li>
+                                        <a href="career.html" class="text-lg font-medium font-Urbanist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Career</a>
+                                    </li>
+                                    <li>
+                                        <a href="contact.html" class="text-lg font-medium font-Urbanist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Contact</a>
+                                    </li>
+                                    <li>
+                                        <a href="forget-password.html" class="text-lg font-medium font-Urbanist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Forget Password</a>
+                                    </li>
+                                    <li>
+                                        <a href="404.html" class="text-lg font-medium font-Urbanist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">404 Page</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="about.html" class="text-lg font-Urbanist no-underline font-medium text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500 pl-10">Solutions</a></li>
+                            <li><a href="#" onclick="event.preventDefault()" class="text-lg font-Urbanist no-underline font-medium text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500 pl-10">Resources</a></li>
+                            <li><a href="#" onclick="event.preventDefault()" class="text-lg font-Urbanist no-underline font-medium text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500 pl-10">Company</a></li>
+                            <li><a href="pricing.html" class="text-lg font-Urbanist font-medium text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500 pl-10">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div class="hidden xl:block">
+                        <a href="sign-in.html" class="no-underline font-Urbanist text-lg font-medium text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Log In</a>
+                        <a href="sign-up.html" class="inline-block no-underline text-lg leading-7 font-semibold font-Urbanist text-primaryColor px-8 py-4 border border-primaryColor bg-btnBg rounded-80 ml-5 hover:bg-btnBg2 hover:transition hover:ease-in-out hover:duration-500">Get Started</a>
+                    </div>
+                </div>
+                
+                <div x-show="open" 
+                x-transition:enter="transition ease-out duration-500"
+                x-transition:enter-start="opacity-0 transform -translate-y-2"
+                x-transition:enter-end="opacity-100 transform translate-y-0"
+                x-transition:leave="transition ease-in duration-500"
+                x-transition:leave-start="opacity-100 transform translate-y-0"
+                x-transition:leave-end="opacity-0 transform -translate-y-0"
+                class="xl:hidden  rounded mx-4 mt-5 transition-opacity transition-height duration-500 ease-in-out overflow-hidden absolute inset-x-0 top-16 z-20 bg-btnBg">
+                    <div class="px-6 py-6 space-y-1 flex justify-between flex-col">
+                        <div>
+                            <ul class="dropdown flex flex-wrap flex-col md:justify-center justify-start">
+                                <li onclick="toggleDropdown()" class="relative group pb-5 lg:px-0 md:px-5" id="dropdownBtn">
+                                    <div class="flex justify-between items-center">
+                                        <a href="#" class="inline-flex pr-2 text-lg font-Urbanist font-medium text-primaryColor hover:text-bg hover:transition hover:ease-in-out hover:duration-500">Page</a>
+                                        <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="11" height="6" viewBox="0 0 11 6" fill="none">
+                                            <path d="M1.5 1L5.5 5L9.5 1" stroke="#010111" class="group-hover:stroke-PalatinateBlue" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <!-- Dropdown content -->
+                                    <ul id="dropdownMenu" class="w-full mt-5 bg-white rounded-md shadow-2xl hidden py-4 group-hover:block overflow-hidden">
+                                        <!-- Dropdown items -->
+                                        <li><a href="blog.html" class="text-lg font-medium font-Urbanist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Blog Page</a></li>
+                                        <li><a href="blog-details.html" class="text-lg font-medium font-Urbanist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Blog Post Page</a></li>
+                                        <li><a href="faq.html" class="text-lg font-medium font-Urbanist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">FAQ</a></li>
+                                        <li><a href="career.html" class="text-lg font-medium font-Urbanist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Career</a></li>
+                                        <li><a href="contact.html" class="text-lg font-medium font-Urbanist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Contact Us</a></li>
+                                        <li><a href="forget-password.html" class="text-lg font-medium font-Urbanist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Forget Password</a></li>
+                                        <li><a href="404.html" class="text-lg font-medium font-Urbanist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">404 Page</a></li>
+                                    </ul>
+                                </li>
+                                <li class="pb-5 lg:px-0 md:px-5"><a href="about.html" class="text-lg font-Urbanist font-medium text-primaryColor hover:text-btnBg  hover:transition hover:ease-in-out hover:duration-500">Solutions</a></li>
+                                <li class="pb-5 lg:px-0 md:px-5"><a href="#" onclick="event.preventDefault()" class="text-lg font-Urbanist font-medium text-primaryColor hover:text-btnBg  hover:transition hover:ease-in-out hover:duration-500">Resources</a></li>
+                                <li class="pb-5 lg:px-0 md:px-5"><a href="#" onclick="event.preventDefault()" class="text-lg font-Urbanist font-medium text-primaryColor hover:text-btnBg  hover:transition hover:ease-in-out hover:duration-500">Company</a></li>
+                                <li class="lg:px-0 md:px-5"><a href="pricing.html" class="text-lg font-Urbanist font-medium text-primaryColor hover:text-btnBg  hover:transition hover:ease-in-out hover:duration-500">Pricing</a></li>
+                            </ul>
+                        </div>
+                        <div class="pt-10 md:block hidden mx-0 md:mx-auto">
+                            <a href="sign-in.html" class="text-lg font-medium font-Urbanist text-primaryColor hover:underline hover:transition hover:ease-in-out hover:duration-300">Sign In</a>
+                            <a href="sign-up.html" class="text-lg font-semibold inline-block font-Urbanist text-primaryColor px-8 py-3 bg-white border border-primaryColor rounded-80 ml-5 hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Header Area End Here -->
+
+    <!-- Blog Details Area Start Here -->
+     <section class="mt-16">
+        <div class="container">
+            <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-offset="20"
+            data-aos-once="true"
+            class="flex md:flex-row flex-col justify-between items-center">
+                <div class="border border-primaryColor rounded-80 py-2 pl-2 pr-9">
+                    <a href="blog.html" class="flex items-center gap-2 font-Urbanist font-semibold text-lg leading-5">
+                        <img class="bg-btnBg rounded-full p-3" src="assets/img/arrow-left.svg" alt="">
+                        Blog Home
+                    </a>
+                </div>
+                <div class="flex gap-5 items-center md:mt-0 mt-10">
+                    <h2 class="text-primaryColor font-NeueMontreal font-medium text-lg leading-7">Share:</h2>
+                    <div class="flex gap-3.5">
+                        <a href="https://www.facebook.com/" target="_blank">
+                            <svg class="group bg-btnBg border border-primaryColor rounded-full" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                <path d="M21.4758 18.8746L21.8908 16.341H19.2968V14.6969C19.2968 14.0039 19.659 13.3279 20.8209 13.3279H22V11.1711C22 11.1711 20.9301 11 19.9069 11C17.7708 11 16.3746 12.2136 16.3746 14.4103V16.3414H14V18.875H16.3746V25H19.2968V18.875L21.4758 18.8746Z" fill="#333333"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/" target="_blank">
+                            <svg class="group border border-primaryColor rounded-full hover:bg-btnBg hover:transition-all hover:ease-in-out hover:duration-500" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="#333333">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2003 15.8783H18.8001V17.1733C19.1746 16.4285 20.135 15.7593 21.5777 15.7593C24.3434 15.7593 25 17.2419 25 19.9621V25H22.2V20.5816C22.2 19.0325 21.8255 18.1589 20.8721 18.1589C19.5498 18.1589 19.0003 19.1004 19.0003 20.5809V25H16.2003V15.8783ZM11.399 24.881H14.199V15.7593H11.399V24.881ZM14.6001 12.785C14.6002 13.0197 14.5537 13.2521 14.4632 13.4686C14.3727 13.6852 14.2401 13.8816 14.073 14.0464C13.7345 14.3828 13.2763 14.5712 12.799 14.57C12.3226 14.5697 11.8654 14.3818 11.5264 14.0471C11.3599 13.8817 11.2278 13.6851 11.1374 13.4685C11.0471 13.2519 11.0004 13.0197 11 12.785C11 12.3111 11.189 11.8575 11.5271 11.5229C11.8658 11.1877 12.3232 10.9998 12.7997 11C13.2771 11 13.7349 11.1883 14.073 11.5229C14.4104 11.8575 14.6001 12.3111 14.6001 12.785Z" fill="#333333"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/" target="_blank">
+                            <svg class="group border border-primaryColor rounded-full bg-white hover:bg-btnBg hover:transition-all hover: ease-in-out hover:duration-500" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="#333333">
+                                <path d="M25 13.4205C24.4758 13.6655 23.9197 13.8263 23.3503 13.8975C23.9434 13.5226 24.3988 12.9289 24.6132 12.2215C24.0494 12.5744 23.4326 12.823 22.7893 12.9567C22.2654 12.3679 21.5189 12 20.6928 12C19.1065 12 17.8204 13.3564 17.8204 15.0293C17.8204 15.2668 17.8458 15.498 17.8948 15.7198C15.5077 15.5934 13.3913 14.3874 11.9746 12.5545C11.7274 13.002 11.5858 13.5224 11.5858 14.0775C11.5858 15.1285 12.0929 16.0557 12.8635 16.599C12.4074 16.584 11.9613 16.454 11.5625 16.2201C11.5624 16.2328 11.5624 16.2454 11.5624 16.2582C11.5624 17.726 12.5524 18.9504 13.8663 19.2287C13.4434 19.35 12.9997 19.3678 12.5693 19.2806C12.9347 20.4841 13.9955 21.3599 15.2523 21.3845C14.2693 22.1969 13.0308 22.6813 11.6852 22.6813C11.4533 22.6813 11.2247 22.6669 11 22.6389C12.2711 23.4985 13.7809 24 15.4029 24C20.6861 24 23.5751 19.3838 23.5751 15.3807C23.5751 15.2493 23.5723 15.1186 23.5668 14.9887C24.1291 14.56 24.6144 14.0289 25 13.4205Z" fill="#333333"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-offset="20"
+            data-aos-once="true"
+            class="xl:w-1000 w-auto mx-auto mt-16">
+                <div>
+                    <h2 class="font-Sora font-semibold md:text-7.5xl text-5xl md:leading-76 leading-48 text-primaryColor">Tips and Tools for Managing Projects with Ease</h2>
+                    <p class="pt-4 text-SecondaryColor font-Urbanist font-normal text-lg leading-7">In the dynamic landscape of project management, success often hinges on the ability to navigate challenges efficiently. Whether you're leading a team or working on individual tasks, having the right tips and tools at your disposal can make a world of difference. In this blog, we'll explore strategies and technologies that can help you manage projects with ease and increase your chances of achieving success.</p>
+                </div>
+                <div class="md:mt-12 mt-6 border border-primaryColor md:rounded-40 rounded-24 md:p-8 p-4">
+                    <img src="assets/img/blogPage/blog-info.png" alt="">
+                </div>
+                <div class="md:mt-12 mt-6">
+                    <h2 class="font-Sora font-bold md:text-5xl text-2xl md:leading-48 text-primaryColor">1. Define Clear Objectives</h2>
+                    <p class="pt-4 text-SecondaryColor font-Urbanist font-normal text-lg leading-7">The foundation of any successful project lies in clear and well-defined objectives. Before diving into the work, take the time to outline specific, measurable, achievable, relevant, and time-bound (SMART) goals. This clarity not only guides your team but also serves as a reference point throughout the project's lifecycle.</p>
+                </div>
+                <div class="md:mt-12 mt-6">
+                    <h2 class="font-Sora font-bold md:text-5xl text-2xl md:leading-48 text-primaryColor">2. Effective Communication</h2>
+                    <p class="pt-4 text-SecondaryColor font-Urbanist font-normal text-lg leading-7">Communication is the glue that holds a project together. Utilize tools such as Slack, Microsoft Teams, or Asana to foster open and transparent communication within your team. Regular updates, progress reports, and feedback sessions help keep everyone on the same page and reduce the risk of misunderstandings.</p>
+                </div>
+                <div class="md:mt-12 mt-6">
+                    <h2 class="font-Sora font-bold md:text-5xl text-2xl md:leading-48 text-primaryColor">3. Project Management Software</h2>
+                    <p class="pt-4 text-SecondaryColor font-Urbanist font-normal text-lg leading-7">Invest in robust project management tools to streamline tasks and enhance collaboration. Platforms like Trello, Jira, or Monday.com offer features such as task tracking, milestone setting, and team collaboration, making it easier to manage projects from inception to completion.</p>
+                </div>
+                <div class="md:mt-12 mt-6">
+                    <h2 class="font-Sora font-bold md:text-5xl text-2xl md:leading-48 text-primaryColor">4. Task Prioritization</h2>
+                    <p class="pt-4 text-SecondaryColor font-Urbanist font-normal text-lg leading-7">Not all tasks are created equal. Prioritize your workload by identifying critical tasks that contribute directly to project milestones. Tools like Eisenhower Matrix or Todoist can help you categorize tasks based on urgency and importance, ensuring that you focus on what matters most.</p>
+                </div>
+                <div class="md:mt-12 mt-6">
+                    <h2 class="font-Sora font-bold md:text-5xl text-2xl md:leading-48 text-primaryColor">5. Agile Methodology</h2>
+                    <p class="pt-4 text-SecondaryColor font-Urbanist font-normal text-lg leading-7">Embrace agile project management principles to adapt to changes swiftly. Agile methodologies, such as Scrum or Kanban, allow teams to respond to evolving project requirements, increase flexibility, and deliver incremental value throughout the project lifecycle.</p>
+                </div>
+                <div class="md:mt-12 mt-6">
+                    <h2 class="font-Sora font-bold md:text-5xl text-2xl md:leading-48 text-primaryColor">6. Time Management Techniques</h2>
+                    <p class="pt-4 text-SecondaryColor font-Urbanist font-normal text-lg leading-7">Efficient time management is key to project success. Techniques such as the Pomodoro Technique or time blocking can help you stay focused and productive. Use tools like Clockify or Toggl to track time spent on tasks and identify areas for improvement.</p>
+                </div>
+                <div class="md:mt-12 mt-6">
+                    <h2 class="font-Sora font-bold md:text-5xl text-2xl md:leading-48 text-primaryColor">7. Risk Management</h2>
+                    <p class="pt-4 text-SecondaryColor font-Urbanist font-normal text-lg leading-7">Anticipate and mitigate potential risks by conducting thorough risk assessments at the project's outset. Tools like Riskalyze or Risk Register templates can help you identify, evaluate, and manage risks, reducing the likelihood of surprises that could derail your project.</p>
+                </div>
+                <div class="md:mt-12 mt-6">
+                    <h2 class="font-Sora font-bold md:text-5xl text-2xl md:leading-48 text-primaryColor">8. Collaborative Document Sharing</h2>
+                    <p class="pt-4 text-SecondaryColor font-Urbanist font-normal text-lg leading-7">Centralize project documentation for easy access and collaboration. Google Workspace or Microsoft 365 facilitate real-time collaboration on documents, spreadsheets, and presentations, allowing team members to work together seamlessly.</p>
+                </div>
+                <div class="md:mt-12 mt-6">
+                    <h2 class="font-Sora font-bold md:text-5xl text-2xl md:leading-48 text-primaryColor">9. Regular Progress Reviews</h2>
+                    <p class="pt-4 text-SecondaryColor font-Urbanist font-normal text-lg leading-7">Schedule regular project reviews to assess progress and make necessary adjustments. Tools like Gantt charts or project dashboards provide visual representations of project timelines and milestones, helping teams stay on track and identify areas that may need attention.</p>
+                </div>
+                <div class="md:mt-12 mt-6 border border-primaryColor md:rounded-40 rounded-24 md:p-8 p-4">
+                    <img src="assets/img/blogPage/blog-info2.png" alt="">
+                </div>
+                <div class="md:mt-12 mt-6">
+                    <h2 class="font-Sora font-bold md:text-5xl text-2xl md:leading-48 text-primaryColor">Continuous Improvement</h2>
+                    <p class="pt-4 text-SecondaryColor font-Urbanist font-normal text-lg leading-7">Foster a culture of continuous improvement by conducting post-project reviews. Encourage team members to share insights and lessons learned, and use this information to refine processes for future projects.</p>
+                    <p class="md:pt-12 pt-6 text-SecondaryColor font-Urbanist font-normal text-lg leading-7">Managing projects with ease requires a combination of strategic planning, effective communication, and the right tools. By implementing these tips and leveraging the power of project management tools, you can navigate the complexities of project management and increase your chances of achieving success. Remember, adaptability and a commitment to continuous improvement are the keys to staying ahead in the ever-evolving world of project management.</p>
+                </div>
+            </div>
+        </div>
+     </section>
+    <!-- Blog Details Area End Here -->
+
+    <!-- Explore Area Start Here -->
+    <section class="lg:mt-44 mt-16">
+        <div class="container">
+            <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-offset="20"
+            data-aos-once="true"
+            class="flex lg:flex-row flex-col justify-between xl:items-end lg:items-center relative">
+                <div class="xl:w-932 lg:w-730 w-full">
+                    <span class="bg-lightYellow border border-primaryColor rounded-40 py-1.5 px-5 font-Urbanist font-semibold text-xl leading-6 text-primaryColor">Blog & Articles</span>
+                    <h2 class="font-Sora font-semibold lg:text-7.5xl md:text-6xl text-5xl md:leading-68 leading-48 lg:leading-76 text-primaryColor pt-6">Explore Our Comprehensive Knowledge Hub</h2>
+                </div>
+                <img class="absolute xl:left-[62%] lg:left-1/2 top-[10%] lg:block hidden" src="assets/img/homePage/abstract/abstract-2.svg" alt="">
+                <img class="absolute xl:left-[78%] lg:left-[75%] xl:-top-[65%] lg:-top-[40%] lg:block hidden" src="assets/img/homePage/abstract/abstract-12.svg" alt="">
+                <div class="md:block hidden lg:mt-0 mt-10">
+                    <a href="blog.html" class="bg-btnBg border border-primaryColor rounded-40 py-4 px-8 font-Urbanist font-semibold text-lg leading-5 hover:bg-btnBg2 hover:transition hover:ease-in-out hover:duration-500">View All Posts</a>
+                </div>
+            </div>
+            <div class="md:mt-16 mt-10 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
+                <div
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-offset="20"
+                data-aos-once="true"
+                
+                class="group">
+                    <div class="bg-white border border-primaryColor rounded-40 p-4 group-hover:bg-btnBg">
+                        <img class="w-full group-hover:scale-95 group-hover:transition group-hover:ease-in-out group-hover:duration-150" src="assets/img/homePage/blog/blog-1.png" alt="">
+                    </div>
+                    <h2 class="font-Sora font-medium md:text-[30px] text-3xl leading-7 md:leading-38 text-primaryColor md:pt-8 pt-5 group-hover:text-btnBg group-hover:transition group-hover:ease-in-out group-hover:duration-150"><a href="blog.html">Unlocking Creativity Through Task Management</a></h2>
+                    <p class="text-SecondaryColor font-Urbanist font-normal text-lg leading-7 pt-4">Discover project management tips and tools that can help you lead and execute projects efficiently, reducing stress along the way.</p>
+                    <a href="blog.html" class="flex gap-2 items-center mt-6 font-Urbanist font-semibold text-lg leading-5">Read More<img class="w-3.5" src="assets/img/arrow-2.svg" alt=""></a>
+                </div>
+                <div
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-offset="20"
+                data-aos-once="true"
+                
+                class="group">
+                    <div class="bg-white border border-primaryColor rounded-40 p-4 group-hover:bg-btnBg">
+                        <img class="w-full group-hover:scale-95 group-hover:transition group-hover:ease-in-out group-hover:duration-150" src="assets/img/homePage/blog/blog-2.png" alt="">
+                    </div>
+                    <h2 class="font-Sora font-medium md:text-[30px] text-3xl leading-7 md:leading-38 text-primaryColor md:pt-8 pt-5 group-hover:text-btnBg group-hover:transition group-hover:ease-in-out group-hover:duration-150"><a href="blog.html">Tips and Tools for Managing Projects with Ease</a></h2>
+                    <p class="text-SecondaryColor font-Urbanist font-normal text-lg leading-7 pt-4">Discover project management tips and tools that can help you lead and execute projects efficiently, reducing stress along the way.</p>
+                    <a href="blog.html" class="flex gap-2 items-center mt-6 font-Urbanist font-semibold text-lg leading-5">Read More<img class="w-3.5" src="assets/img/arrow-2.svg" alt=""></a>
+                </div>
+                <div
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-offset="20"
+                data-aos-once="true"
+                
+                class="group">
+                    <div class="bg-white border border-primaryColor rounded-40 p-4 group-hover:bg-btnBg">
+                        <img class="w-full group-hover:scale-95 group-hover:transition group-hover:ease-in-out group-hover:duration-150" src="assets/img/homePage/blog/blog-3.png" alt="">
+                    </div>
+                    <h2 class="font-Sora font-medium md:text-[30px] text-3xl leading-7 md:leading-38 text-primaryColor md:pt-8 pt-5 group-hover:text-btnBg group-hover:transition group-hover:ease-in-out group-hover:duration-150"><a href="blog.html">How to Delegate Effectively and Free Up Your Time</a></h2>
+                    <p class="text-SecondaryColor font-Urbanist font-normal text-lg leading-7 pt-4">Discover project management tips and tools that can help you lead and execute projects efficiently, reducing stress along the way.</p>
+                    <a href="blog.html" class="flex gap-2 items-center mt-6 font-Urbanist font-semibold text-lg leading-5">Read More<img class="w-3.5" src="assets/img/arrow-2.svg" alt=""></a>
+                </div> 
+            </div>
+            <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-offset="20"
+            data-aos-once="true"
+            class="block md:hidden mt-10">
+                <a href="blog.html" class="bg-btnBg border border-primaryColor rounded-40 py-4 px-8 font-Urbanist font-semibold text-lg leading-5 block text-center">View All Posts</a>
+            </div>
+        </div>
+     </section>
+    <!-- Explore Area End Here -->
+
+
+    <!-- Footer Area Start Here -->
+    <section class="lg:mt-52 mt-24 relative">
+        <div
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-offset="20"
+        data-aos-once="true"
+        class="container">
+            <img class="md:w-auto w-40 absolute md:-top-[10%] -top-[5%] -z-10 right-0" src="assets/img/homePage/abstract/abstract-15.png" alt="">
+            <div
+           
+            class="md:bg-footerBg bg-footerBg1 bg-center bg-no-repeat bg-cover w-full md:pt-[72px] pt-16 lg:px-[72px] md:px-14 px-4 xl:pb-44 md:pb-60 pb-20 rounded-64 border-2 border-primaryColor">
+                <div class="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-x-10"> 
+                    <div class="">
+                        <h2 class="font-Urbanist font-normal text-2.5xl leading-8 text-primaryColor">Your All-in-One Solution for Seamless Task Management, Collaboration, and Productivity.</h2>
+                    </div>
+                    <div class="block xl:hidden lg:mt-0 mt-10">
+                        <h2 class="font-Urbanist font-semibold text-xl leading-30">Join our email list to stay up to date on features and releases.</h2>
+                        <div class="mt-4">
+                            <form class="flex lg:flex-row flex-col gap-5 items-center">
+                                <input class="lg:w-[287px] w-full p-4 rounded-80 border border-primaryColor text-SecondaryColor text-lg leading-6 font-normal placeholder:text-SecondaryColor placeholder:text-lg focus:outline-none" type="text" placeholder="Email Address">
+                                <button class="lg:inline-block block lg:w-auto w-full text-center rounded-80 py-4 px-8 border border-primaryColor bg-lightYellow font-Urbanist font-semibold text-lg leading-5">Subscribe</button>
+                            </form>
+                        </div>
+                        <p class="font-Urbanist text-base leading-6 text-SecondaryColor pt-4 font-normal">By subscribing you agree to with our privacy policy and provide consent to receive updates from our company.</p>
+                    </div>
+                    <div class="w-250 xl:mx-auto flex justify-between lg:mt-0 mt-10">
+                        <div>
+                            <h2 class="font-Urbanist font-bold text-lg leading-5 text-primaryColor">Company</h2>
+                            <ul class="mt-8 my-20">
+                                <li><a href="about.html" class="font-Urbanist font-medium text-lg leading-6 text-primaryColor block">About</a></li>
+                                <li><a href="about.html" class="font-Urbanist font-medium text-lg leading-6 text-primaryColor block pt-8">Features</a></li>
+                                <li><a href="about.html" class="font-Urbanist font-medium text-lg leading-6 text-primaryColor block pt-8">Solutions</a></li>
+                                <li><a href="about.html" class="font-Urbanist font-medium text-lg leading-6 text-primaryColor block pt-8">Resources</a></li>
+                                <li><a href="about.html" class="font-Urbanist font-medium text-lg leading-6 text-primaryColor block pt-8">Pricing</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h2 class="font-Urbanist font-bold text-lg leading-5 text-primaryColor">Follow us</h2>
+                            <ul class="mt-8">
+                                <li><a href="https://www.facebook.com/" target="_blank" class="font-Urbanist font-medium text-lg leading-6 text-primaryColor block">Facebook</a></li>
+                                <li><a href="https://www.instagram.com/" target="_blank" class="font-Urbanist font-medium text-lg leading-6 text-primaryColor block pt-8">Instagram</a></li>
+                                <li><a href="https://twitter.com/" target="_blank" class="font-Urbanist font-medium text-lg leading-6 text-primaryColor block pt-8">Twitter</a></li>
+                                <li><a href="https://www.linkedin.com/" target="_blank" class="font-Urbanist font-medium text-lg leading-6 text-primaryColor block pt-8">Linkedin</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="xl:block hidden">
+                        <h2 class="font-Urbanist font-semibold text-xl leading-30">Join our email list to stay up to date on features and releases.</h2>
+                        <div class="mt-4">
+                            <form class="flex lg:flex-row flex-col gap-5 items-center">
+                                <input class="lg:w-[287px] w-full p-4 rounded-80 border border-primaryColor text-SecondaryColor text-lg leading-6 font-normal placeholder:text-SecondaryColor placeholder:text-lg focus:outline-none" type="text" placeholder="Email Address">
+                                <button class="lg:inline-block block text-center rounded-80 py-4 px-8 border border-primaryColor bg-lightYellow font-Urbanist font-semibold text-lg leading-5">Subscribe</button>
+                            </form>
+                        </div>
+                        <p class="font-Urbanist text-base leading-6 text-SecondaryColor pt-4 font-normal">By subscribing you agree to with our privacy policy and provide consent to receive updates from our company.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="py-10">
+                <div class="flex md:flex-row flex-col justify-between items-center">
+                    <p class="font-Urbanist text-lg leading-6 text-primaryColor text-opacity-60 font-normal">&copy; 2023 DOTask, lnc. All right reserved.</p>
+                    <div class="flex gap-10 md:mt-0 mt-10">
+                        <p class="font-Urbanist text-lg leading-6 text-primaryColor text-opacity-60 font-normal">Terms & Conditions</p>
+                        <p class="font-Urbanist text-lg leading-6 text-primaryColor text-opacity-60 font-normal">Privacy Policy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+    <!-- Footer Area End Here -->
+
+    <script src="assets/js/alpine.min.js" defer></script>
+    <!-- AOS Animation Script -->
+     <script src="assets/js/aos.js"></script>
+     <script src="assets/js/aos_script.js"></script>
+</body>
+</html>

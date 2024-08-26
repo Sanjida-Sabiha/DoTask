@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="assets/img/fav-icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Main Title -->
+    <title>DoTask || Contact Page</title>
+    <!-- AOS Animation CSS -->
+     <link rel="stylesheet" href="assets/css/aos.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Header Area Start Here -->
+    <header class="">
+        <div class="container">
+            <nav x-data="{ open: false }" class="">
+                <div class="flex justify-between py-7 items-center">
+                    <div class="">
+                        <a class="" href="index.html">
+                            <img class="" src="assets/img/logo.svg" alt="logo">
+                        </a>
+                    </div>
+                    <!-- Menu button for mobile -->
+                    <div class="-mr-2 flex items-center xl:hidden">
+                        <button @click="open = !open" class="bg-btnBg rounded-full w-10 h-10 px-2">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="black">
+                            <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                            <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" fill="black"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Desktop menu -->
+                    <div class="hidden xl:block" x-data="{ open: false }">
+                        <ul class="flex list-none">
+                            <li class="group flex items-center relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                                <a href="#" class="inline-flex items-center no-underline text-lg font-Urbanist font-medium text-primaryColor hover:text-btnBg transition ease-in-out duration-500 "
+                                    @click.prevent="open = !open" :class="{ 'text-LavenderIndigo': open }">
+                                    Features
+                                    <svg :class="{ 'rotate-180': open }" class="ml-2 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" width="11" height="6" fill="none" viewBox="0 0 11 6">
+                                        <path d="M1.5 1L5.5 5L9.5 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+
+                                <!-- Dropdown content  -->
+                                <ul id="dropdown" class="absolute left-1 top-6 w-52 py-2 list-none bg-white rounded-md hidden shadow-2xl z-10 group-hover:block" :class="{ 'block': open, 'hidden': !open }">
+                                    <!-- Dropdown items -->
+                                    <li>
+                                        <a href="blog.html" class="text-lg font-medium font-Urbanist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Blog Page</a>
+                                    </li>
+                                    <li>
+                                        <a href="blog-details.html" class="text-lg font-medium font-Urbanist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Blog Post Page</a>
+                                    </li>
+                                    <li>
+                                        <a href="faq.html" class="text-lg font-medium font-Urbanist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">FAQ</a>
+                                    </li>
+                                    <li>
+                                        <a href="career.html" class="text-lg font-medium font-Urbanist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Career</a>
+                                    </li>
+                                    <li>
+                                        <a href="contact.html" class="text-lg font-medium font-Urbanist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Contact</a>
+                                    </li>
+                                    <li>
+                                        <a href="forget-password.html" class="text-lg font-medium font-Urbanist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Forget Password</a>
+                                    </li>
+                                    <li>
+                                        <a href="404.html" class="text-lg font-medium font-Urbanist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">404 Page</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="about.html" class="text-lg font-Urbanist no-underline font-medium text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500 pl-10">Solutions</a></li>
+                            <li><a href="#" onclick="event.preventDefault()" class="text-lg font-Urbanist no-underline font-medium text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500 pl-10">Resources</a></li>
+                            <li><a href="#" onclick="event.preventDefault()" class="text-lg font-Urbanist no-underline font-medium text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500 pl-10">Company</a></li>
+                            <li><a href="pricing.html" class="text-lg font-Urbanist font-medium text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500 pl-10">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div class="hidden xl:block">
+                        <a href="sign-in.html" class="no-underline font-Urbanist text-lg font-medium text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Log In</a>
+                        <a href="sign-up.html" class="inline-block no-underline text-lg leading-7 font-semibold font-Urbanist text-primaryColor px-8 py-4 border border-primaryColor bg-btnBg rounded-80 ml-5 hover:bg-btnBg2 hover:transition hover:ease-in-out hover:duration-500">Get Started</a>
+                    </div>
+                </div>
+                
+                <div x-show="open" 
+                x-transition:enter="transition ease-out duration-500"
+                x-transition:enter-start="opacity-0 transform -translate-y-2"
+                x-transition:enter-end="opacity-100 transform translate-y-0"
+                x-transition:leave="transition ease-in duration-500"
+                x-transition:leave-start="opacity-100 transform translate-y-0"
+                x-transition:leave-end="opacity-0 transform -translate-y-0"
+                class="xl:hidden  rounded mx-4 mt-5 transition-opacity transition-height duration-500 ease-in-out overflow-hidden absolute inset-x-0 top-16 z-20 bg-btnBg">
+                    <div class="px-6 py-6 space-y-1 flex justify-between flex-col">
+                        <div>
+                            <ul class="dropdown flex flex-wrap flex-col md:justify-center justify-start">
+                                <li onclick="toggleDropdown()" class="relative group pb-5 lg:px-0 md:px-5" id="dropdownBtn">
+                                    <div class="flex justify-between items-center">
+                                        <a href="#" class="inline-flex pr-2 text-lg font-Urbanist font-medium text-primaryColor hover:text-bg hover:transition hover:ease-in-out hover:duration-500">Page</a>
+                                        <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="11" height="6" viewBox="0 0 11 6" fill="none">
+                                            <path d="M1.5 1L5.5 5L9.5 1" stroke="#010111" class="group-hover:stroke-PalatinateBlue" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <!-- Dropdown content -->
+                                    <ul id="dropdownMenu" class="w-full mt-5 bg-white rounded-md shadow-2xl hidden py-4 group-hover:block overflow-hidden">
+                                        <!-- Dropdown items -->
+                                        <li><a href="blog.html" class="text-lg font-medium font-Urbanist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Blog Page</a></li>
+                                        <li><a href="blog-details.html" class="text-lg font-medium font-Urbanist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Blog Post Page</a></li>
+                                        <li><a href="faq.html" class="text-lg font-medium font-Urbanist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">FAQ</a></li>
+                                        <li><a href="career.html" class="text-lg font-medium font-Urbanist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Career</a></li>
+                                        <li><a href="contact.html" class="text-lg font-medium font-Urbanist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Contact Us</a></li>
+                                        <li><a href="forget-password.html" class="text-lg font-medium font-Urbanist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Forget Password</a></li>
+                                        <li><a href="404.html" class="text-lg font-medium font-Urbanist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">404 Page</a></li>
+                                    </ul>
+                                </li>
+                                <li class="pb-5 lg:px-0 md:px-5"><a href="about.html" class="text-lg font-Urbanist font-medium text-primaryColor hover:text-btnBg  hover:transition hover:ease-in-out hover:duration-500">Solutions</a></li>
+                                <li class="pb-5 lg:px-0 md:px-5"><a href="#" onclick="event.preventDefault()" class="text-lg font-Urbanist font-medium text-primaryColor hover:text-btnBg  hover:transition hover:ease-in-out hover:duration-500">Resources</a></li>
+                                <li class="pb-5 lg:px-0 md:px-5"><a href="#" onclick="event.preventDefault()" class="text-lg font-Urbanist font-medium text-primaryColor hover:text-btnBg  hover:transition hover:ease-in-out hover:duration-500">Company</a></li>
+                                <li class="lg:px-0 md:px-5"><a href="pricing.html" class="text-lg font-Urbanist font-medium text-primaryColor hover:text-btnBg  hover:transition hover:ease-in-out hover:duration-500">Pricing</a></li>
+                            </ul>
+                        </div>
+                        <div class="pt-10 md:block hidden mx-0 md:mx-auto">
+                            <a href="sign-in.html" class="text-lg font-medium font-Urbanist text-primaryColor hover:underline hover:transition hover:ease-in-out hover:duration-300">Sign In</a>
+                            <a href="sign-up.html" class="text-lg font-semibold inline-block font-Urbanist text-primaryColor px-8 py-3 bg-white border border-primaryColor rounded-80 ml-5 hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Header Area End Here -->
+
+    <!-- Contact Area Start Here -->
+    <section class="mt-16">
+        <div class="container">
+            <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-offset="20"
+            data-aos-once="true"
+            class="relative">
+                <h2 class="text-left font-Sora font-semibold md:text-80xl text-5xl md:leading-96 leading-48 text-primaryColor">Contacts</h2>
+                <img class="absolute top-0 lg:left-[30%] left-1/2 transform scale-y-[-1] rotate-[65deg]" src="assets/img/homePage/abstract/abstract-1.svg" alt="">
+            </div>
+            <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-offset="20"
+            data-aos-once="true"
+            class="grid xl:grid-cols-2 grid-cols-1 lg:gap-40 gap-10 mt-16">
+                <div>
+                    <h2 class="font-Sora font-medium md:text-5xl text-4.5xl leading-48 text-primaryColor">Your feedback is valuable <span class="xl:block inline-block">to us.</span></h2>
+                    <p class="font-Urbanist font-normal text-lg leading-7 pt-5 text-SecondaryColor">We’re available Monday through Saturday. We do our best to respond to each request with a personalized reply within 12-24 business hours.</p>
+                    <div class="flex flex-wrap md:w-[398px] w-full gap-5 mt-12">
+                        <img src="assets/img/contact/Profile.png" alt="">
+                        <img src="assets/img/contact/Profile-1.png" alt="">
+                        <img src="assets/img/contact/Profile-2.png" alt="">
+                        <img src="assets/img/contact/Profile-3.png" alt="">
+                        <img src="assets/img/contact/Profile-4.png" alt="">
+                    </div>
+                </div>
+                <div class="relative bg-lightYellow rounded-20 border border-primaryColor">
+                    <div class="bg-white lg:m-10 m-4 rounded-20 border border-primaryColor">
+                        <div class="lg:px-10 px-4 lg:py-9 py-4">
+                            <form>
+                                <label class="block font-Urbanist font-semibold text-lg leading-6 text-primaryColor">First Name*</label>
+                                <input type="text" class="mt-3.5 w-full py-3.5 pl-6 border border-primaryColor rounded-80 font-Urbanist font-normal text-lg leading-7 text-SecondaryColor placeholder:text-SecondaryColor placeholder:text-lg" placeholder="First Name*">
+                                <label class="block mt-8 font-Urbanist font-semibold text-lg leading-6 text-primaryColor">Last Name*</label>
+                                <input type="text" class="mt-3.5 w-full py-3.5 pl-6 border border-primaryColor rounded-80 font-Urbanist font-normal text-lg leading-7 text-SecondaryColor placeholder:text-SecondaryColor placeholder:text-lg" placeholder="Last Name*">
+                                <label class="block pt-8 font-Urbanist font-semibold text-lg leading-6 text-primaryColor">Email*</label>
+                                <input type="Email" class="mt-3.5 w-full py-3.5 pl-6 border border-primaryColor rounded-80 font-Urbanist font-normal text-lg leading-7 text-SecondaryColor placeholder:text-SecondaryColor placeholder:text-lg" placeholder="Email address*">
+                                <label class="block mt-8 font-Urbanist font-semibold text-lg leading-6 text-primaryColor">Subject*</label>
+                                <input type="text" class="mt-3.5 w-full py-3.5 pl-6 border border-primaryColor rounded-80 font-Urbanist font-normal text-lg leading-7 text-SecondaryColor placeholder:text-SecondaryColor placeholder:text-lg" placeholder="Write your subject">
+                                <label class="block mt-8 font-Urbanist font-semibold text-lg leading-6 text-primaryColor">Message*</label>
+                                <textarea class="mt-3.5 w-full h-250 pt-4 pl-6 border border-primaryColor rounded-20 font-Urbanist font-normal text-lg leading-7 text-SecondaryColor placeholder:text-SecondaryColor placeholder:text-lg" name="" id="" placeholder="Write your message..."></textarea>
+                            </form>
+                            <div class="mt-7">
+                                <a href="index.html" class="text-center text-lg font-semibold md:inline-block block font-Urbanist text-primaryColor px-8 py-3 bg-btnBg border border-primaryColor rounded-80 hover:bg-btnBg2 hover:transition hover:ease-in-out hover:duration-500">Submit Your Message</a>
+                            </div>
+                            <div class="mt-6 flex justify-between items-center rounded-xl p-5 border border-SecondaryColor border-opacity-25 md:w-[327px] w-auto bg-gray-200 bg-opacity-25">
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="not-robot" name="not-robot" class="mr-2 leading-tight">
+                                    <label for="not-robot" class="text-lg leading-7 font-Urbanist font-medium text-primaryColor">I’m not a Robot</label>
+                                </div>
+                                <div>
+                                    <img class="md:w-auto w-10" src="assets/img/contact/captcha.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img class="absolute md:w-auto w-32 -left-[25%] -z-10 top-1/2 lg:block hidden" src="assets/img/homePage/abstract/abstract-13.png" alt="">
+                    <img class="absolute md:w-auto w-32 xl:-right-[8%] right-0 -z-10 -bottom-[7%]" src="assets/img/homePage/abstract/abstract-19.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Area End Here -->
+
+    <!-- Contact Info Area Start Here -->
+     <section class="mt-36">
+        <div class="container">
+            <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-offset="20"
+            data-aos-once="true"
+            class="lg:w-863 w-full mx-auto">
+                <h2 class="text-center font-Sora font-semibold md:text-7.5xl text-5xl md:leading-76 leading-48 text-primaryColor">Want to reach us directly?</h2>
+                <p class="lg:w-650 w-full mx-auto text-SecondaryColor md:pt-8 pt-4 font-Urbanist font-normal md:text-lg text-base leading-7 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-offset="20"
+            data-aos-once="true"
+            class="grid lg:grid-cols-2 grid-cols-1 xl:w-1295 w-full mx-auto gap-10 lg:mt-16 mt-7">
+                <div class="bg-white border border-primaryColor rounded-24 relative lg:py-10 py-5">
+                    <div class="absolute bg-btnBg w-full h-full top-2 left-2 rounded-24 -z-10 border border-primaryColor bg-cover bg-center">
+                    </div>
+                    <div class="flex lg:flex-row flex-col justify-center lg:items-center gap-5 lg:pl-0 pl-5">
+                        <img class="lg:w-20 w-16" src="assets/img/contact/call.svg" alt="">
+                        <h2 class="font-Urbanist font-medium text-lg leading-7 text-SecondaryColor">Call us to talk<span class="block font-Sora lg:text-4xl text-2xl leading-38 text-primaryColor">+1 (000) 123-4567</span></h2>
+                    </div>
+                </div>
+                <div class="bg-white border border-primaryColor rounded-24 relative lg:py-10 py-5">
+                    <div class="absolute bg-btnBg2 w-full h-full top-2 left-2 rounded-24 -z-10 border border-primaryColor bg-cover bg-center">
+                    </div>
+                    <div class="flex lg:flex-row flex-col justify-center lg:items-center gap-5 lg:pl-0 pl-5">
+                        <img class="lg:w-20 w-16" src="assets/img/contact/mail.svg" alt="">
+                        <h2 class="font-Urbanist font-medium text-lg leading-7 text-SecondaryColor">Send us an email<span class="block font-Sora lg:text-4xl text-2xl leading-38 text-primaryColor">Company@gmail.com</span></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+    <!-- Contact Info Area End Here -->
+
+    <!-- Promo Area Start Here -->
+    <section class="md:mt-52 mt-32 relative">
+        <div class="container">
+            <div class="relative bg-bgBanner lg:pt-16 pt-8 bg-cover bg-no-repeat border-2 border-primaryColor xl:rounded-64 rounded-40 bg-center w-full">
+                <img class="md:w-auto w-48 absolute xl:-top-[18%] -top-[10%] xl:-left-12 -left-1 -z-30" src="assets/img/homePage/abstract/abstract-14.png" alt="">
+                <div class="absolute border-2 border-primaryColor bg-white h-full w-full -z-10 xl:top-6 top-3 xl:-right-6 -right-3 xl:rounded-80 rounded-40">
+                </div>
+                <div
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-offset="20"
+                data-aos-once="true"
+                class="relative flex xl:flex-row flex-col justify-between">
+                    <div class="xl:w-[780px] w-full xl:pl-20 lg:pl-10 pl-4 xl:pr-0 pr-4">
+                        <h2 class="font-Sora font-semibold lg:text-6.5xl text-4xl leading-44 lg:leading-76 text-primaryColor">Elevate Collaboration and Communication to the Next Level</h2>
+                        <p class="xl:w-[562px] w-full font-Urbanist font-normal textt-lg leading-5 pt-6 text-SecondaryColor">Transform your team's performance with cutting-edge collaboration and communication solutions, setting the stage for future success.</p>
+                        <a href="blog-details.html" class="mt-8 inline-block bg-btnBg border border-primaryColor rounded-40 py-4 px-8 font-Urbanist font-semibold text-lg leading-5 hover:bg-btnBg2 hover:transition hover:ease-in-out hover:duration-500">View All Posts</a>
+                    </div>
+                    <div class="xl:mt-0 mt-10">
+                        <img class="xl:w-auto w-full xl:rounded-br-64 rounded-br-40 xl:rounded-bl-0 rounded-bl-40" src="assets/img/homePage/promo/promo-banner.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img class="absolute xl:left-1/2 lg:left-[44%] left-[18%] -bottom-40" src="assets/img/homePage/abstract/abstract-16.svg" alt="">
+                <img class="absolute lg:left-[59%] left-1/2 -bottom-32" src="assets/img/homePage/abstract/abstract-18.svg" alt="">
+            </div>
+        </div>
+     </section>
+    <!-- Promo Area End Here -->
+
+    <!-- Footer Area Start Here -->
+     <section class="md:mt-72 mt-52 relative">
+        <div
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-offset="20"
+        data-aos-once="true"
+        class="container">
+            <img class="absolute left-[20%] -top-[20%] lg:block hidden" src="assets/img/homePage/abstract/abstract-3.svg" alt="">
+            <img class="md:w-auto w-40 absolute md:-top-[10%] -top-[5%] -z-10 right-0" src="assets/img/homePage/abstract/abstract-15.png" alt="">
+            <div
+           
+            class="md:bg-footerBg bg-footerBg1 bg-center bg-no-repeat bg-cover w-full md:pt-[72px] pt-16 lg:px-[72px] md:px-14 px-4 xl:pb-44 md:pb-60 pb-20 rounded-64 border-2 border-primaryColor">
+                <div class="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-x-10"> 
+                    <div class="">
+                        <h2 class="font-Urbanist font-normal text-2.5xl leading-8 text-primaryColor">Your All-in-One Solution for Seamless Task Management, Collaboration, and Productivity.</h2>
+                    </div>
+                    <div class="block xl:hidden lg:mt-0 mt-10">
+                        <h2 class="font-Urbanist font-semibold text-xl leading-30">Join our email list to stay up to date on features and releases.</h2>
+                        <div class="mt-4">
+                            <form class="flex lg:flex-row flex-col gap-5 items-center">
+                                <input class="lg:w-[287px] w-full p-4 rounded-80 border border-primaryColor text-SecondaryColor text-lg leading-6 font-normal placeholder:text-SecondaryColor placeholder:text-lg focus:outline-none" type="text" placeholder="Email Address">
+                                <button class="lg:inline-block block lg:w-auto w-full text-center rounded-80 py-4 px-8 border border-primaryColor bg-lightYellow font-Urbanist font-semibold text-lg leading-5">Subscribe</button>
+                            </form>
+                        </div>
+                        <p class="font-Urbanist text-base leading-6 text-SecondaryColor pt-4 font-normal">By subscribing you agree to with our privacy policy and provide consent to receive updates from our company.</p>
+                    </div>
+                    <div class="w-250 xl:mx-auto flex justify-between lg:mt-0 mt-10">
+                        <div>
+                            <h2 class="font-Urbanist font-bold text-lg leading-5 text-primaryColor">Company</h2>
+                            <ul class="mt-8 my-20">
+                                <li><a href="about.html" class="font-Urbanist font-medium text-lg leading-6 text-primaryColor block">About</a></li>
+                                <li><a href="about.html" class="font-Urbanist font-medium text-lg leading-6 text-primaryColor block pt-8">Features</a></li>
+                                <li><a href="about.html" class="font-Urbanist font-medium text-lg leading-6 text-primaryColor block pt-8">Solutions</a></li>
+                                <li><a href="about.html" class="font-Urbanist font-medium text-lg leading-6 text-primaryColor block pt-8">Resources</a></li>
+                                <li><a href="about.html" class="font-Urbanist font-medium text-lg leading-6 text-primaryColor block pt-8">Pricing</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h2 class="font-Urbanist font-bold text-lg leading-5 text-primaryColor">Follow us</h2>
+                            <ul class="mt-8">
+                                <li><a href="https://www.facebook.com/" target="_blank" class="font-Urbanist font-medium text-lg leading-6 text-primaryColor block">Facebook</a></li>
+                                <li><a href="https://www.instagram.com/" target="_blank" class="font-Urbanist font-medium text-lg leading-6 text-primaryColor block pt-8">Instagram</a></li>
+                                <li><a href="https://twitter.com/" target="_blank" class="font-Urbanist font-medium text-lg leading-6 text-primaryColor block pt-8">Twitter</a></li>
+                                <li><a href="https://www.linkedin.com/" target="_blank" class="font-Urbanist font-medium text-lg leading-6 text-primaryColor block pt-8">Linkedin</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="xl:block hidden">
+                        <h2 class="font-Urbanist font-semibold text-xl leading-30">Join our email list to stay up to date on features and releases.</h2>
+                        <div class="mt-4">
+                            <form class="flex lg:flex-row flex-col gap-5 items-center">
+                                <input class="lg:w-[287px] w-full p-4 rounded-80 border border-primaryColor text-SecondaryColor text-lg leading-6 font-normal placeholder:text-SecondaryColor placeholder:text-lg focus:outline-none" type="text" placeholder="Email Address">
+                                <button class="lg:inline-block block text-center rounded-80 py-4 px-8 border border-primaryColor bg-lightYellow font-Urbanist font-semibold text-lg leading-5">Subscribe</button>
+                            </form>
+                        </div>
+                        <p class="font-Urbanist text-base leading-6 text-SecondaryColor pt-4 font-normal">By subscribing you agree to with our privacy policy and provide consent to receive updates from our company.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="py-10">
+                <div class="flex md:flex-row flex-col justify-between items-center">
+                    <p class="font-Urbanist text-lg leading-6 text-primaryColor text-opacity-60 font-normal">&copy; 2023 DOTask, lnc. All right reserved.</p>
+                    <div class="flex gap-10 md:mt-0 mt-10">
+                        <p class="font-Urbanist text-lg leading-6 text-primaryColor text-opacity-60 font-normal">Terms & Conditions</p>
+                        <p class="font-Urbanist text-lg leading-6 text-primaryColor text-opacity-60 font-normal">Privacy Policy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+    <!-- Footer Area End Here -->
+
+    <script src="assets/js/alpine.min.js" defer></script>
+    <!-- AOS Animation Script -->
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/aos_script.js"></script>
+</body>
+</html>

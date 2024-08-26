@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="assets/img/fav-icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Main Title -->
+    <title>DoTask || Sign In Page</title>
+    <!-- AOS Animation CSS -->
+     <link rel="stylesheet" href="assets/css/aos.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Sign In Area Start Here -->
+     <section>
+        <div class="flex lg:flex-row flex-col-reverse justify-between">
+            <div
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            data-aos-offset="20"
+            data-aos-once="true"
+            class="bg-white xl:px-32 md:px-10 px-4">
+                <div class="pt-8">
+                  <p class="font-Urbanist font-normal md:text-lg text-base leading-7 text-SecondaryColor">Need to create a new organization?<a href="sign-up.html" class="text-btnBg"> Sign up.</a></p>  
+                </div>
+                <div class="xl:py-40 md:py-20 py-10">
+                    <a class="block" href="index.html">
+                        <img src="assets/img/logo.svg" alt="">
+                    </a>
+                    <div class="mt-8 mx-auto lg:w-480 w-full">
+                        <h4 class="font-Sora text-5xl leading-48 text-primaryColor font-medium text-left">Welcome Back!</h4>
+                        <div class=" mt-10">
+                            <a href="#"  onclick="event.preventDefault()" class=" w-full h-14 border border-primaryColor rounded-40 flex justify-center items-center gap-2 font-Urbanist font-normal text-lg leading-8 text-SecondaryColor"><img src="assets/img/google.svg" alt="">Continue with Google</a>
+                        </div>
+                        <div class="flex items-center py-7">
+                            <hr class="w-full border border-primaryColor">
+                            <p class="md:px-4 px-2 font-Urbanist text-lg leading-7 font-normal text-center text-primaryColor">OR</p>
+                            <hr class="w-full border border-primaryColor">
+                        </div>
+                        <form class="">
+                            <label class="font-Urbanist font-semibold text-base leading-6 text-primaryColor">Enter the email and password for your account</label>
+                            <input class="mt-4 w-full h-14 border border-primaryColor font-Urbanist text-secondaryColor p-4 rounded-40 placeholder:font-Urbanist placeholder:text-secondaryColor placeholder:text-left placeholder:text-base placeholder:leading-6 focus:outline-none" type="text" placeholder="youremail@gmail.com">
+                            <input class="mt-4 w-full h-14 border border-primaryColor font-Urbanist text-secondaryColor p-4 rounded-40 placeholder:font-Urbanist placeholder:text-secondaryColor placeholder:text-left placeholder:text-base placeholder:leading-6 focus:outline-none" type="password" placeholder="******************">
+                            <button  onclick="event.preventDefault()" class="w-full mt-7 text-base font-semibold block font-Urbanist text-primaryColor px-11 py-4 border border-primaryColor bg-btnBg rounded-40 hover:bg-btnBg2 hover:transition hover:ease-in-out hover:duration-500">Sing In</button>
+                        </form>
+                        <p class="pt-4 font-Urbanist font-normal text-base leading-6 text-secondaryColor">Need help logging in? <a href="forget-password.html" class="text-btnBg"> Reset your password.</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-lightGray lg:w-730 w-full py-20 pl-20">
+                <img src="assets/img/homePage/banner.png" alt="">
+            </div>
+        </div>
+     </section>
+    <!-- Sign In Area End Here -->
+
+    <!-- AOS Animation Script -->
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/aos_script.js"></script>
+</body>
+</html>
